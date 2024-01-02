@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku Game</title>
+  <style>
+    /* Add some basic styling for better presentation */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      margin: 0px auto;
+      width: 160px;  
+    }
+    td {
+      width: 30px;
+      height: 25px;
+      text-align: center;
+      border: 1px solid #ddd;
+      padding: 5px;
+      /* border: 1px solid #EEEEEE; */
+    }
+    input {
+      width: 40px;
+      height: 25px;
+      text-align: center;
+      font-size: 24px;
+      border: 1px solid #777;
+      outline: none;
+      border-radius: 9px ;
+    }
+    .maintable { border: 1px solid black; }
+    .guide
+    {
+        font-size: 9px;
+    }
+  </style>
+
+<script>
+    var tableValues = [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ];
+    function checkSudoku() {
+    //   var sudokuTable = document.getElementById('sudokuTable');
+    //   var rows = sudokuTable.getElementsByTagName('tr');
+
+    //   // Validate each row
+    //   for (var i = 0; i < rows.length; i++) {
+    //     var cells = rows[i].getElementsByTagName('input');
+    //     if (!isSetValid(cells)) {
+    //       showError('Invalid row at index ' + (i + 1));
+    //       return;
+    //     }
+    //   }
+
+    //   // Validate each column
+    //   for (var j = 0; j < 9; j++) {
+    //     var column = [];
+    //     for (var i = 0; i < rows.length; i++) {
+    //       var cells = rows[i].getElementsByTagName('input');
+    //       column.push(cells[j]);
+    //     }
+    //     if (!isSetValid(column)) {
+    //       showError('Invalid column at index ' + (j + 1));
+    //       return;
+    //     }
+    //   }
+
+    //   // Validate each 3x3 subgrid
+    //   for (var startRow = 0; startRow < 9; startRow += 3) {
+    //     for (var startCol = 0; startCol < 9; startCol += 3) {
+    //       var subgrid = [];
+    //       for (var i = startRow; i < startRow + 3; i++) {
+    //         var cells = rows[i].getElementsByTagName('input');
+    //         for (var j = startCol; j < startCol + 3; j++) {
+    //           subgrid.push(cells[j]);
+    //         }
+    //       }
+    //       if (!isSetValid(subgrid)) {
+    //         showError('Invalid subgrid starting at row ' + (startRow + 1) + ', column ' + (startCol + 1));
+    //         return;
+    //       }
+    //     }
+    //   }
+        alert("Nooooo!!");
+      // If all checks pass, Sudoku is valid
+    //   showError('Sudoku is valid!');
+    }
+
+    function isSetValid(cells) {
+    //   var values = [];
+    //   for (var i = 0; i < cells.length; i++) {
+    //     var value = cells[i].value.trim();
+    //     if (value === '') continue; // Skip empty cells
+    //     if (values.includes(value)) return false; // Duplicate value found
+    //     values.push(value);
+    //   }
+      return true;
+    }
+
+    function showError(message) {
+      var errorElement = document.getElementById('error');
+      errorElement.textContent = message;
+    }
+  </script>
+
+</head>
+<body>
+
+  <h1>Sudoku Game by @windygallery</h1>
+  <p id="error" class="error"></p>
+
+  <!-- <button onclick="checkSudoku()">Check Sudoku</button> -->
+  <table class="maintable">
+    <!-- <tbody> -->
+      <tr>
+        <td>
+            <table><tr>
+                <td><input type="text" maxlength="1" name="11"><span id="c11" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="12"><span id="c12" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="13"><span id="c13" class="guide">123456789</span></td>
+            </tr><tr>
+                <td><input type="text" maxlength="1" name="21"><span id="c21" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="22"><span id="c22" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="23"><span id="c23" class="guide">123456789</span></td>
+            </tr><tr>
+                <td><input type="text" maxlength="1" name="31"><span id="c31" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="32"><span id="c32" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="33"><span id="c33" class="guide">123456789</span></td>
+            </tr></table>
+        </td>
+        <td>
+            <table><tr>
+                <td><input type="text" maxlength="1" name="14"><span id="c14" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="15"><span id="c15" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="16"><span id="c16" class="guide">123456789</span></td>
+            </tr><tr>
+                <td><input type="text" maxlength="1" name="24"><span id="c24" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="25"><span id="c25" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="26"><span id="c26" class="guide">123456789</span></td>
+            </tr><tr>
+                <td><input type="text" maxlength="1" name="34"><span id="c34" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="35"><span id="c35" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="36"><span id="c36" class="guide">123456789</span></td>
+            </tr></table>
+        </td>
+        <td>
+            <table><tr>
+                <td><input type="text" maxlength="1" name="17"><span id="c17" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="18"><span id="c18" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="19"><span id="c19" class="guide">123456789</span></td>
+            </tr><tr>
+                <td><input type="text" maxlength="1" name="27"><span id="c27" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="28"><span id="c28" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="29"><span id="c29" class="guide">123456789</span></td>
+            </tr><tr>
+                <td><input type="text" maxlength="1" name="37"><span id="c37" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="38"><span id="c38" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="39"><span id="c39" class="guide">123456789</span></td>
+            </tr></table>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+            <table><tr>
+                <td><input type="text" maxlength="1" name="41"><span id="c41" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="42"><span id="c42" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="43"><span id="c43" class="guide">123456789</span></td>
+            </tr><tr>
+                <td><input type="text" maxlength="1" name="51"><span id="c51" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="52"><span id="c52" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="53"><span id="c53" class="guide">123456789</span></td>
+            </tr><tr>
+                <td><input type="text" maxlength="1" name="61"><span id="c61" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="62"><span id="c62" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="63"><span id="c63" class="guide">123456789</span></td>
+            </tr></table>
+        </td>
+        <td>
+            <table><tr>
+                <td><input type="text" maxlength="1" name="44"><span id="c44" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="45"><span id="c45" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="46"><span id="c46" class="guide">123456789</span></td>
+            </tr><tr>
+                <td><input type="text" maxlength="1" name="54"><span id="c54" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="55"><span id="c55" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="56"><span id="c56" class="guide">123456789</span></td>
+            </tr><tr>
+                <td><input type="text" maxlength="1" name="64"><span id="c64" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="65"><span id="c65" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="66"><span id="c66" class="guide">123456789</span></td>
+            </tr></table>
+        </td>
+        <td>
+            <table><tr>
+                <td><input type="text" maxlength="1" name="47"><span id="c47" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="48"><span id="c48" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="49"><span id="c49" class="guide">123456789</span></td>
+            </tr><tr>
+                <td><input type="text" maxlength="1" name="57"><span id="c57" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="58"><span id="c58" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="59"><span id="c59" class="guide">123456789</span></td>
+            </tr><tr>
+                <td><input type="text" maxlength="1" name="67"><span id="c67" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="68"><span id="c68" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="69"><span id="c69" class="guide">123456789</span></td>
+            </tr></table>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+            <table><tr>
+                <td><input type="text" maxlength="1" name="71"><span id="c71" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="72"><span id="c72" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="73"><span id="c73" class="guide">123456789</span></td>
+            </tr><tr>
+                <td><input type="text" maxlength="1" name="81"><span id="c81" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="82"><span id="c82" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="83"><span id="c83" class="guide">123456789</span></td>
+            </tr><tr>
+                <td><input type="text" maxlength="1" name="91"><span id="c91" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="92"><span id="c92" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="93"><span id="c93" class="guide">123456789</span></td>
+            </tr></table>
+        </td>
+        <td>
+            <table><tr>
+                <td><input type="text" maxlength="1" name="74"><span id="c74" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="75"><span id="c75" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="76"><span id="c76" class="guide">123456789</span></td>
+            </tr><tr>
+                <td><input type="text" maxlength="1" name="84"><span id="c84" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="85"><span id="c85" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="86"><span id="c86" class="guide">123456789</span></td>
+            </tr><tr>
+                <td><input type="text" maxlength="1" name="94"><span id="c94" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="95"><span id="c95" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="96"><span id="c96" class="guide">123456789</span></td>
+            </tr></table>
+        </td>
+        <td>
+            <table><tr>
+                <td><input type="text" maxlength="1" name="77"><span id="c77" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="78"><span id="c78" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="79"><span id="c79" class="guide">123456789</span></td>
+            </tr><tr>
+                <td><input type="text" maxlength="1" name="87"><span id="c87" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="88"><span id="c88" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="89"><span id="c89" class="guide">123456789</span></td>
+            </tr><tr>
+                <td><input type="text" maxlength="1" name="97"><span id="c97" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="98"><span id="c98" class="guide">123456789</span></td>
+                <td><input type="text" maxlength="1" name="99"><span id="c99" class="guide">123456789</span></td>
+            </tr></table>
+        </td>
+      </tr>
+    <!-- </tbody> -->
+  </table>
+
+
+
+<script>
+
+
+    function newValue() {
+        // console.log(this.name);
+        var stringArray = this.name.split('');
+        var row = stringArray[0];
+        var col = stringArray[1];
+        let value = 0
+        if (this.value !== undefined) {
+            value       = parseInt(this.value);
+            if (value > 0 && value < 10) {
+                // console.log("value["+row+"]["+col+"] = "+value)
+                tableValues[row-1][col-1] = value;
+                reduceCandidate(value, row, col);
+                printTable();
+            }
+            else {
+                tableValues[row-1][col-1] = 0;
+                this.value = "";
+                reduceCandidate(value, row, col);
+                printTable();
+            }
+        }
+        
+    }
+
+    function getValue(row, col) {
+        
+        return tableValues[row-1][col-1];
+    }
+
+    function printTable() {
+        txt = ""
+        for (var i = 0; i < 9; i++) {
+            for (var j = 0; j < 9; j++) {
+                let x = "0"
+                if (tableValues[i][j]) {
+                    x = tableValues[i][j]
+                }
+                txt += " " + x
+            }
+            txt += "\n"
+        }
+        console.log(txt)
+    }
+
+    function setDifference(setA, setB) {
+        let difference = new Set(setA);
+        setB.forEach(element => {
+            difference.delete(element);
+        });
+        return difference;
+    }
+
+    function reduceCandidate(value, row, col) {
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= 9; j++) {
+                let nameId = "c"+i+j
+                let guide  = document.getElementById(nameId);
+                recheckGuide(guide, i, j);
+            }
+        }
+    }
+
+    function getAllValuesinScope(row, col, usedSet) {
+        boxCol      = Math.ceil(col/3)
+        boxRow      = Math.ceil(row/3)
+        startCol    = boxCol*3 - 3
+        startRow    = boxRow*3 - 3
+        for (var i = 1; i <= 3; i++) {
+            for (var j = 1; j <= 3; j++) {
+                x = getValue(startRow+i,startCol+j)
+                if (x > 0) { usedSet.add(x); }
+            }
+        }
+    }
+
+    function recheckGuide(obj, row, col) {
+        let usedSet = new Set();
+        for (var i = 1; i <= 9; i++) {
+            // console.log(row+","+i);
+            x = getValue(row, i)
+            if (x > 0) { usedSet.add(x); }
+        }
+        for (var i = 1; i <= 9; i++) {
+            // console.log(i+","+col);
+            x = getValue(i, col)
+            if (x > 0) { usedSet.add(x); }
+        }
+        // LOOP in small box to get all (add into usedSet) !!!!
+        getAllValuesinScope(row, col, usedSet);
+
+        let choices     = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+        let possible    = setDifference(choices, usedSet);
+        let guide       = Array.from(possible).join('');;
+        // console.log(guide); // Output: Set { 1, 2 }
+        if (getValue(row,col) > 0) { guide = ""; }
+        obj.textContent = guide;
+    }
+
+    // recheckGuide();
+
+    // Bind the change event for all input fields to the checking function
+    var inputs = document.querySelectorAll('input');
+    inputs.forEach(function(input) {
+      input.addEventListener('change', newValue);
+        // console.log("Add listener to me");
+    });
+</script>
+</body>
+</html>
